@@ -3,8 +3,8 @@
 	\section{Pflichtenheft}
 		\begin{table}[h]
 			\centering
-			\caption{Liste unbedingt zu erfüllender Eigenschaften.}
-			\begin{tabular}{@{}p{.5\textwidth}p{.5\textwidth}@{}}
+			\caption{Liste mit Festanforderungen.}
+			\begin{tabular}{@{}p{.4\textwidth}p{.5\textwidth}@{}}
 				\toprule
 				\textbf{Festanforderungen} 						& \textbf{Erläuterung} \\
 				\midrule
@@ -25,8 +25,8 @@
 		% \newpage
 		\begin{table}[h]
 			\centering
-			\caption{Liste nicht zu unter- oder überschreitender Parameter.}
-			\begin{tabular}{@{}p{.5\textwidth}p{.5\textwidth}@{}}
+			\caption{Liste nicht zu unter- oder gegebenenfalls überschreitender Parameter.}
+			\begin{tabular}{@{}p{.4\textwidth}p{.5\textwidth}@{}}
 				\toprule
 				\textbf{Mindestanforderungen} 					& \textbf{Erläuterung} \\
 				\midrule
@@ -40,7 +40,7 @@
 		\begin{table}[h]
 			\centering
 			\caption{Liste von Eigenschaften, die das Produkt im Rahmen der Machbarkeit weiterhin aufweisen könnte.}
-			\begin{tabular}{@{}p{.5\textwidth}p{.5\textwidth}@{}}
+			\begin{tabular}{@{}p{.4\textwidth}p{.5\textwidth}@{}}
 				\toprule
 				\textbf{Wunschanforderungen} 											& \textbf{Erläuterung}\\
 				\midrule
@@ -72,7 +72,7 @@
 
 	\begin{itemize}
 		\item Temperaturen von \SI{-18}{\celsius} bis \SI{10}{\celsius}.
-		\item Außenabmessung \SI{(515 x 345 x 425)}{mm} (BxTxH).
+		\item Außenabmessung 515 x 345 x 425 (BxTxH, Einheiten in mm).
 		\item Digitales Display.
 		\item Kühlung durch einen Kompressor.
 		\item Kältemittel R134a (Tetrafluorethan).
@@ -86,7 +86,7 @@
 
 	\begin{itemize}
 		\item Temperaturen von \SI{-24}{\celsius} bis \SI{10}{\celsius}.
-		\item Außenabmessung \SI{(375 x 585 x 480)}{\milli\metre} (B x T x H).
+		\item Außenabmessung 375 x 585 x 480 (B x T x H, Einheiten in mm).
 		\item Durch Autobatterie mit \SI{12}{\volt} / \SI{24}{\volt} DC betrieben.
 		\item Umschalter für Netzbetrieb (\SI{230}{\volt} AC).
 		\item Stabiler und stoßfester UVA-beständiger Kunststoff.
@@ -107,6 +107,15 @@
 		\item Gewicht von \SI{20,5}{\kilo\gram}
 		\item \(\approx \SI{23}{L}\) Kapazität
 	\end{itemize}
+
+	\section{Mindmap}
+	Nach den ersten Überlegungen zu den Anforderungen und Funktionen des Transportgefäßes kann eine Übersicht anhand eines Mindmaps wie in Abb. \ref{fig:mindmap} gestaltet werden.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[angle=90,width=0.8\linewidth]{assets/skizzen/Mindmap}
+		\caption{Mindmap.}
+		\label{fig:mindmap}
+	\end{figure}
 
 	\section{Materialien und Regularien}
 		\subsection{Normen und Regularien}
@@ -142,6 +151,7 @@
 					Vakuumdämmplatte \cite{Vakuumplate.Nagarajan.2013}							&\(37\) -- \(31\)			&\(16,3\) -- \(59,4\)		&									&\\
 					\bottomrule
 				\end{tabular}
+				\label{tab:isomaterial}
 			\end{table}
 			\( ^1 \)Bei \SI{-10}{\celsius}\\
 			\( ^2 \)Nach 10 minütigem Eintauchen in flüssigen Stickstoff (\SI{-195}{\celsius})
@@ -150,8 +160,8 @@
 		\textit{Annahme}:
 		\SI{20}{\litre} Innenraum; zu \SI{80}{\percent} gefüllt mit Wasser (\( \SI{16}{\litre} \widehat{=} \SI{16}{\kilo\gram} \))\par\medskip
 		\textit{Betrachtung:}
-		Energien beim Herunterkühlen von Wasser bei RT (\( \SI{20}{\celsius} = \SI{293}{\kelvin} \)) auf \( \SI{-20}{\celsius} = \SI{253}{\kelvin} \)\par\medskip
-
+		Energien beim Herunterkühlen von Wasser bei RT (\( \SI{20}{\celsius} = \SI{293}{\kelvin} \)) auf \( \SI{-20}{\celsius} = \SI{253}{\kelvin} \)\par\bigskip
+		\par\bigskip
 		\underline{Je kg umgewandelte Wärmeenergie \(=\) Änderung der spezifischen Enthalpie:}\par\medskip
 		Für \SI{20}{\celsius} \(\rightarrow\) \SI{0}{\celsius}:
 		\begin{align}
@@ -184,30 +194,22 @@
 		\end{equation}
 
 		\begin{align}
-			\frac{\Delta Q}{\Delta t} = \dot{Q} = k \cdot A \cdot \Delta T = \SI{0,54}{\watt\metre\squared\per\kelvin} \cdot (\SI{0,05}{\metre} \cdot \SI{0,3}{\metre}) \cdot (\SI{-40}{\kelvin}) = \underline{\SI{-0,324}{\watt}}
-		\end{align}
-		\begin{align}
-			\Rightarrow \Delta Q	&= \dot{Q} \cdot \Delta t = \SI{-0,324}{\watt} \cdot \SI{48}{\hour} \cdot \SI{3600}{\frac{\second}{\hour}} \nonumber \\
-									&= \SI{-55987,2}{\joule} \approx \underline{\underline{\SI{-56}{\kilo\joule}}}
-		\end{align}
-
-		\begin{align*}
-			\dot{Q} = P	&= \frac{(T_{aussen} - T_{innen})}{R_{th}} \\
-						&= \frac{\SI{313,15}{\kelvin} - \SI{253,15}{\kelvin}}{\SI{33}{\kelvin\per\watt}} \\
+			\dot{Q} = P	&= \frac{(T_{aussen} - T_{innen})}{R_{th}} \nonumber\\
+						&= \frac{\SI{313,15}{\kelvin} - \SI{253,15}{\kelvin}}{\SI{33}{\kelvin\per\watt}} \nonumber\\
 						&\approx \SI{1,81}{\watt} \\
-			\Rightarrow &\approx \SI{87,27}{\watt\hour} \qquad \text{(Für \SI{48}{\hour})}
-		\end{align*}
+			\Rightarrow &\approx \SI{87,27}{\watt\hour} \qquad \text{(Für \SI{48}{\hour})} \nonumber
+		\end{align}
 		%
 		Bei einer Außentemperatur von \SI{40}{\celsius} und einer Anfangsinnentemperatur von \SI{-20}{\celsius} mit der Annahme, dass \SI{33}{\percent} des Nutzvolumens von \SI{16,72}{\litre} mit Wasser und
-		\SI{66}{\percent} mit Luft gefüllt sind, wird von einer Dauer von \(t_{krit} = \SI{}{\hour}\) ausgegangen, bis sich der Innenraum um \SI{2}{\kelvin} erwärmt hat.
+		\SI{66}{\percent} mit Luft gefüllt sind, wird von einer Dauer von \(t_{krit} = \SI{14,2}{\hour}\) ausgegangen, bis sich der Innenraum um \SI{2}{\kelvin} erwärmt hat.
 		\begin{align}
-			t_{krit}	&= \frac{\Delta \vartheta}{\dot{Q}} \cdot \left(0,66 \cdot \rho_{aq}V \cdot c_{aq}\right) + \left(0,33 \cdot \rho_{luft}V \cdot c_{luft} \right)\nonumber \\
-						&= \frac{\SI{2}{\kelvin}}{\SI{1,81}{\watt}} \cdot \left( 0,66 \cdot \SI{1000}{\kilo\gram\per\metre\cubed} \cdot \SI{0,206}{\metre\cubed} \cdot \SI{4200}{\joule\kelvin\per\kilo\gram}\right)\nonumber \\
-						&+ \left(  0,33 \cdot \SI{1,225}{\kilo\gram\per\metre\cubed} \cdot \SI{0,206}{\metre\cubed} \cdot \SI{1005}{\joule\kelvin\per\kilo\gram} \right)\nonumber \\
-						&\approx 
+			t_{krit}	&= \frac{\Delta T}{\dot{Q}} \cdot \left[\left(0,66 \cdot \rho_{aq}V \cdot c_{aq}\right) + \left(0,33 \cdot \rho_{luft}V \cdot c_{luft} \right)\right] \nonumber \\
+						&= \frac{\SI{2}{\kelvin}}{\SI{1,81}{\watt}} \cdot \bigg[\left( 0,66 \cdot \SI{1000}{\kilo\gram\per\metre\cubed} \cdot \SI{0,0167}{\metre\cubed} \cdot \SI{4200}{\joule\per\kilo\gram\kelvin}\right)\nonumber \\
+						&+ \left(  0,33 \cdot \SI{1,225}{\kilo\gram\per\metre\cubed} \cdot \SI{0,0167}{\metre\cubed} \cdot \SI{1005}{\joule\per\kilo\gram\kelvin} \right)\bigg] \nonumber \\
+						&\approx \SI{51.159}{s} \approx \SI{14,2}{h}
 		\end{align}
 		\begin{align}
-			\Delta \vartheta	&= \frac{\Delta Q}{0,66 \cdot \rho_{aq}V \cdot c_{aq}}\nonumber\\
+			\Delta T	&= \frac{\Delta Q}{0,66 \cdot \rho_{aq}V \cdot c_{aq}}\nonumber\\
 								&= \frac{\SI{1,81}{\watt} \cdot \SI{5}{\hour} \cdot \SI{3600}{\second \per \hour} }{0,66 \cdot \SI{997}{\kilogram \per \metre\cubed} \cdot \SI{ (16,72 \cdot 10^{-3}) }{ \metre\cubed } \cdot \SI{4200}{\joule \per \kilogram \kelvin}}\nonumber\\
 								&\approx \SI{0,7}{\kelvin}
 		\end{align}
@@ -228,5 +230,36 @@
 	% 	\end{align*}
 	%=================================================
 	
-	\section{Dämmung}
+	\section{Dimensionierung Photovoltaikmodul}
+		Mithilfe der Photovoltaik kann der Akku bei Tageslicht geladen und die Kühlung aufrecht erhalten werden. Hierbei erzeugt ein Modul aus Monokristallin laut bei einer Fläche
+		von $ \SI{9}{m^2} $ eine Spitzenleistung von mindestens $ \SI{1}{kW_p} $ \cite{Wesselak..photovoltaik.2012}. Zum Betrieb des \textit{nICE.cube} und Laden seines Energiespeichers ist ein
+		Viertel der Leistung ($ \widehat{=} \SI{250}{W_p} $) ausreichend. Dies entspricht einer effektiven Fläche von $ \SI{2,25}{m^2} $.
 		
+	\section{Volumenberechnung}
+		Das Nutzvolumen setzt sich aus der Länge $ L $, Breite $ B $ und Höhe $ H $ der inneren Box zusammen.
+		
+		\begin{align}
+		V_{nutz} &= L \cdot B \cdot H \nonumber \\
+		&= \SI{4,00}{dm} \cdot \SI{2,48}{dm} \cdot \SI{1,73}{dm} \nonumber \\
+		&= \SI{17,16}{L}
+		\end{align}
+		
+		Im Sinne thermischer und mechanischer Optimierung wurden Verrundungen mit \(r=\SI{4}{\mm}\) entlang der Innenkanten des Nutzvolumens platziert. Diese reduzieren das
+		effektive Nutzvolumen auf $ \SI{16,72}{L} $.
+		
+	\section{Elektronik}
+		Die Verbindung der jeweiligen Elektronikkomponenten wird in \cref{fig:schaltschema} schematisch dargestellt.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\linewidth]{assets/skizzen/Schaltschema}
+			\caption{Schaltschema der Elektronik.}
+			\label{fig:schaltschema}
+		\end{figure}
+
+		Sowohl die interne als auch sämtliche externe Spannungsversorgungen werden vom internen Netzteil auf den Lastkreis von \SI{12}{V}, sowie die Versorgungsspannung der Boardelektronik
+		geregelt. Das im Netzteil integrierte Batteriemanagement übernimmt hierbei die Überwachung des Akkuzustandes. Daten wie Außen- und Innentemperatur, Temperatur der Akkuzellen,
+		Statistiken zum Zustand des Akkus etc. laufen zentral im Mikrocontroller zusammen, werden dort verarbeitet und gegebenenfalls an die Meldesysteme weitergegeben.
+
+		Um Raum einzusparen und das Kühlkonzept der Boardelektronik zu vereinfachen wurden in der Realisierung Mikrocontroller, Batteriemanagement und Netzteil in einem Bauteil vereint
+		(Pos. 8 in \cref{tab:stueckliste}).
